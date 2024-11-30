@@ -20,7 +20,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`https://coffee-store-server-six-chi.vercel.app/coffee/${id}`, {
+                fetch(`https://coffee-store-server-omega-sand.vercel.app/coffee/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
