@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
 
     // eslint-disable-next-line react/prop-types
-    const { _id, name, quantity,  taste, category,  photo } = coffee;
+    const { _id, name, quantity, taste, category, photo } = coffee;
 
     const handleDelete = id => {
         console.log(id);
@@ -20,7 +20,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/coffee/${id}`, {
+                fetch(`https://coffee-store-server-six-chi.vercel.app/coffee/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -46,17 +46,17 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
             <figure>
                 <img
                     src={photo}
-                    
+
                     alt={name} />
             </figure>
             <div className="flex justify-between items-center w-full p-6">
                 <div>
                     <h2 className="card-title">Name: {name}</h2>
                     <p>Quantity: {quantity}</p>
-             
+
                     <p>Taste: {taste}</p>
                     <p>Category: {category}</p>
-                   
+
                 </div>
                 <div className="justify-end">
                     <div className="join join-vertical space-y-4">
